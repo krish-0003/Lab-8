@@ -16,15 +16,18 @@ public class MyStack<E> {
     }
 
     public E pop() {
-        if (delegate.isEmpty()) throw new EmptyStackException();
+        if (isEmpty()) throw new EmptyStackException();
         E e = delegate.get(delegate.size() - 1);
         delegate.remove(delegate.size() -1 );
         return e;
     }
 
+    public boolean isEmpty() {
+        return (delegate.size() == 0);
+    }
+
     public int size() {
         return delegate.size();
     }
-
 
 }
